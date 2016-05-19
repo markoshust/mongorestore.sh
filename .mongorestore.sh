@@ -1,5 +1,5 @@
 #!/bin/bash
-## This script syncs a MongDB backup from a Google Cloud Storage bucket and
+## This script syncs a mongodb backup from a Google Cloud Storage bucket and
 ## mongorestore's it to a local db.
 ##
 ## Author: Mark Shust <mark@shust.com>
