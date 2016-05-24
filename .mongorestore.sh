@@ -3,7 +3,7 @@
 ## mongorestore's it to a local db.
 ##
 ## Author: Mark Shust <mark@shust.com>
-## Version: 1.1.0
+## Version: 1.2.0
 
 BUCKET=my-bucket-name
 FOLDER=folder-name/$1
@@ -19,8 +19,8 @@ fi
 
 mkdir -p $BACKUP_DIR
 
-if [ ! -d $BACKUP_DIR ]; then
-  gsutil -m cp -r gs://$BUCKET/$FOLDER $BACKUP_DIR
+if [ ! -d $FOLDER ]; then
+  gsutil -m cp -r gs://$BUCKET/$FOLDER $BACKUP_DIR/
 fi
 
 mongorestore --db $DB_NAME -h $DB_HOST --port $DB_PORT --drop $BACKUP_DIR/$1/
